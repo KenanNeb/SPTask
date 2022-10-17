@@ -34,7 +34,7 @@
             this.lbl_name = new System.Windows.Forms.Label();
             this.lbl_password = new System.Windows.Forms.Label();
             this.lbl_username = new System.Windows.Forms.Label();
-            this.btn_save = new System.Windows.Forms.Button();
+            this.save_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbox_name
@@ -95,16 +95,16 @@
             this.lbl_username.TabIndex = 10;
             this.lbl_username.Text = "User Name";
             // 
-            // btn_save
+            // save_btn
             // 
-            this.btn_save.Location = new System.Drawing.Point(269, 171);
-            this.btn_save.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(82, 22);
-            this.btn_save.TabIndex = 4;
-            this.btn_save.Text = "Save";
-            this.btn_save.UseVisualStyleBackColor = true;
-            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            this.save_btn.Location = new System.Drawing.Point(269, 171);
+            this.save_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.save_btn.Name = "save_btn";
+            this.save_btn.Size = new System.Drawing.Size(82, 22);
+            this.save_btn.TabIndex = 4;
+            this.save_btn.Text = "Save";
+            this.save_btn.UseVisualStyleBackColor = true;
+            this.save_btn.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // Register
             // 
@@ -117,7 +117,7 @@
             this.Controls.Add(this.lbl_name);
             this.Controls.Add(this.lbl_password);
             this.Controls.Add(this.lbl_username);
-            this.Controls.Add(this.btn_save);
+            this.Controls.Add(this.save_btn);
             this.Name = "Register";
             this.Text = "Register";
             this.ResumeLayout(false);
@@ -133,6 +133,6 @@
         private Label lbl_name;
         private Label lbl_password;
         private Label lbl_username;
-        private Button btn_save;
+        private Button save_btn;
     }
 }
