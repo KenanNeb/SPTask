@@ -10,7 +10,7 @@ namespace SPTask
         }
         private void btn_save_Click(object sender, EventArgs e)
         {
-            string connection = @"Data Source=DESKTOP-7HUNHTF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False; Database=Login/Register";
+            string connection = @"Data Source=DESKTOP-7HUNHTF;Integrated Security=True;Connect Timeout=30;ApplicationIntent=ReadWrite; Database=Login/Register";
 
             using (SqlConnection conn = new SqlConnection(connection))
             {

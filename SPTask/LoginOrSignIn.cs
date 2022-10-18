@@ -4,7 +4,7 @@ namespace SPTask
 {
     public partial class LoginOrSignIn : Form
     {
-        string connection = @"Data Source=DESKTOP-7HUNHTF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False; Database=Login/Register";
+        string connection = @"Data Source=DESKTOP-7HUNHTF;Integrated Security=True;Connect Timeout=30;ApplicationIntent=ReadWrite; Database=LoginRegister";
 
         public LoginOrSignIn()
         {
