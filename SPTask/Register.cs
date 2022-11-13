@@ -1,4 +1,5 @@
-﻿using System.Data.SqlClient;
+﻿using Microsoft.Extensions.Configuration;
+using System.Data.SqlClient;
 
 namespace SPTask
 {
@@ -10,9 +11,12 @@ namespace SPTask
         }
         private void btn_save_Click(object sender, EventArgs e)
         {
-            string connection = @"Data Source=DESKTOP-7HUNHTF;Integrated Security=True;Connect Timeout=30;ApplicationIntent=ReadWrite; Database=Login/Register";
-
-            using (SqlConnection conn = new SqlConnection(connection))
+            ConfigurationBuilder builder = new ConfigurationBuilder();
+            builder.SetBasePath(Directory.GetCurrentDirectory());
+            builder.AddJsonFile("appconfig.json");
+            var config = builder.Build();
+            var connectionString = config.GetConnectionString("SqlServerConnection");
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
 

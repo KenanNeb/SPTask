@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "SqlServerConnection": "Server=DESKTOP-7HUNHTF; Database=LoginRegister; Integrated Security=SSPI;Connect Timeout=30;ApplicationIntent=ReadWrite;"
+  }
+}

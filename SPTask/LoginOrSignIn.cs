@@ -1,14 +1,17 @@
-﻿using System.Data.SqlClient;
+﻿using Microsoft.Extensions.Configuration;
+using System.Data.SqlClient;
 
 namespace SPTask
 {
     public partial class LoginOrSignIn : Form
     {
-        string connection = @"Data Source=DESKTOP-7HUNHTF;Integrated Security=True;Connect Timeout=30;ApplicationIntent=ReadWrite; Database=LoginRegister";
-
+        
+        ConfigurationBuilder builder = new ConfigurationBuilder();
+        
         public LoginOrSignIn()
         {
             InitializeComponent();
+            
         }
 
         private void btn_register_Click(object sender, EventArgs e)
@@ -20,12 +23,16 @@ namespace SPTask
         private void btn_login_Click(object sender, EventArgs e)
         {
             SqlDataReader DR;
+            builder.SetBasePath(Directory.GetCurrentDirectory());
+            builder.AddJsonFile("appconfig.json");
+            var config = builder.Build();
+            var connectionString = config.GetConnectionString("SqlServerConnection");
 
             string user = password_txtbx.Text;
             string pass = username_txtbx.Text;
 
 
-            using (SqlConnection conn = new SqlConnection(connection))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 SqlCommand cmd = new SqlCommand();
 
